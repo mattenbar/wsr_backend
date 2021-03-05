@@ -27,9 +27,9 @@ ActiveRecord::Schema.define(version: 2021_03_05_130059) do
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "post_id", null: false
-    t.index ["post_id"], name: "index_posts_on_post_id"
+    t.bigint "category_id", null: false
+    t.index ["category_id"], name: "index_posts_on_category_id"
   end
 
-  add_foreign_key "posts", "posts"
+  add_foreign_key "posts", "categories"
 end

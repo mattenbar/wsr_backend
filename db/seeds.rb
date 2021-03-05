@@ -6,3 +6,4 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 capital_connections = Category.create(name: "Capital Connections")
+digital_domain = Category.create(name: "Digital Domain")

@@ -4,7 +4,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.string :title
       t.string :author
       t.text :content
-      t.belongs_to :category, null: false, foreign_key: true
+      
 
       t.timestamps
     end

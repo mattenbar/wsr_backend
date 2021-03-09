@@ -1,4 +1,5 @@
-class AuthController < ApplicationController
+class Api::V1::AuthController < ApplicationController
+    skip_before_action :require_login, only: [:login, :auto_login]
 
     def auto_login
         if session_user
@@ -9,6 +10,7 @@ class AuthController < ApplicationController
     end
 
     def user_is_authorized
+        render json: {message: "You are authorized"}
     end
 
     def login

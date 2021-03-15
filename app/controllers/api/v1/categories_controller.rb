@@ -8,6 +8,7 @@ class Api::V1::CategoriesController < ApplicationController
 
   def show
     category = Category.find(params[:id])
-    render json: {category: CategorySerializer.new(category)}
+    posts = category.posts
+    render json: {category: CategorySerializer.new(category), posts: PostSerializer.new(posts)}
   end
 end

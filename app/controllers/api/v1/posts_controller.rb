@@ -13,6 +13,9 @@ class Api::V1::PostsController < ApplicationController
 
   def create
     post = Post.new(post_params)
+    byebug
+    file_url = Cloudinary::Uploader.upload(params[:image], options = {})
+    post.image = file_url["url"]
     if post.save
       render json: {post: PostSerializer.new(post)}
     else
@@ -40,7 +43,7 @@ class Api::V1::PostsController < ApplicationController
 
 
   def post_params
-    params.require(:post).permit(:id, :category_id, :title, :content, :author)
+    params.require(:post).permit(:id, :category_id, :title, :content, :author, :image)
   end
 
 end

@@ -45,3 +45,4 @@ gem "active_model_serializers", "~> 0.10.10"
 gem 'fast_jsonapi'
 
 gem 'jwt'
+gem 'cloudinary'

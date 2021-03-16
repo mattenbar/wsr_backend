@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: wealthsolutionsreport
+  api_key: '854468873348994'
+  api_secret: 3WrH5XLFS3jYF1TX_Cd7YNv2qZA
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: wealthsolutionsreport
+  api_key: '854468873348994'
+  api_secret: 3WrH5XLFS3jYF1TX_Cd7YNv2qZA
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: wealthsolutionsreport
+  api_key: '854468873348994'
+  api_secret: 3WrH5XLFS3jYF1TX_Cd7YNv2qZA
+  enhance_image_tag: true
+  static_file_support: false

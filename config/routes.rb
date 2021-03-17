@@ -15,6 +15,8 @@ Rails.application.routes.draw do
       post "/login", to: "auth#login"
       get "/auto_login", to: "auth#auto_login"
       get "/user_is_authorized", to: "auth#user_is_authorized"
+
+      put "/image_upload", to: "posts#image_upload"
       
     end
   end

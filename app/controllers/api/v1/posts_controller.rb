@@ -11,15 +11,30 @@ class Api::V1::PostsController < ApplicationController
     render json: {post: PostSerializer.new(post)}
   end
 
-  def create
-    post = Post.new(post_params)
+  def image_upload
     byebug
-    file_url = Cloudinary::Uploader.upload(params[:image], options = {})
+    post = Post.find_by(title: (params["title"]))
+    # byebug
+    file_url = Cloudinary::Uploader.upload(params[:image])
     post.image = file_url["url"]
+    
     if post.save
-      render json: {post: PostSerializer.new(post)}
+        render json: post
     else
-      render json: {error: 'Unable to creat post'}
+        render json: {error: "Unable to save image at this time"}
+    end
+  end
+
+  def create
+    post = Post.create(post_params)
+    # byebug
+    # file_url = Cloudinary::Uploader.upload(params[:image], options = {})
+    # post.image = file_url["url"]
+    if post.valid?
+      # render json: {post: PostSerializer.new(post)}  #there's something wrong with the serializer // not working
+      render json: post # this works though
+    else
+      render json: {error: 'Unable to create post'}
     end
 
   end

@@ -8,8 +8,8 @@ class Api::V1::FeaturesController < ApplicationController
 
   def show
     feature = Feature.find(params[:id])
-    posts = feature.posts
-    render json: {feature: FeatureSerializer.new(feature), posts: PostSerializer.new(posts)}
+    post = feature.post
+    render json: {feature: FeatureSerializer.new(feature), post: PostSerializer.new(post)}
   end
 
 end

@@ -207,6 +207,70 @@ Post.create({
     
 })
 
+Post.create({
+    :title => "Testing Post 12",
+    :author => "Matt Enbar",
+    :content => "Take agile so that as an end result, we increase viewability. Execute brand integration so that as an end result, we make users into advocates. Leverage blue-sky thinking with the aim to improve overall outcomes. Demonstrate customer journeys and above all, go viral. Repurpose sprints and try to re-target key demographics.
+
+    Generate big data and try to make the logo bigger. Build custom solutions with the possibility to take this offline. Utilising growth hacking and above all, make users into advocates. Informing key demographics and above all, use best practice. Create innovation yet increase viewability. Synchronise vertical integration and possibly innovate.
+    
+    Repurposing cloud computing and then target the low hanging fruit. Build vertical integration and possibly improve overall outcomes. Considering branding to, consequently, surprise and delight. Engage responsive websites in order to make users into advocates. Repurposing responsive websites to in turn be CMSable.
+    
+    Repurposing core competencies to be on brand. Generating stakeholder management but be transparent. Inform core competencies and then be CMSable. Drive thought leadership and possibly create a better customer experience. Engaging blue-sky thinking and then create a better customer experience. Generating stakeholder engagement to be transparent.",
+    :image => "https://i.imgur.com/qmHekD3.jpg",
+    :category => Category.find(14),
+    :created_at => "2021-02-01 05:19:43",
+    
+})
+
+Post.create({
+    :title => "Testing Post 13",
+    :author => "Matt Enbar",
+    :content => "Take agile so that as an end result, we increase viewability. Execute brand integration so that as an end result, we make users into advocates. Leverage blue-sky thinking with the aim to improve overall outcomes. Demonstrate customer journeys and above all, go viral. Repurpose sprints and try to re-target key demographics.
+
+    Generate big data and try to make the logo bigger. Build custom solutions with the possibility to take this offline. Utilising growth hacking and above all, make users into advocates. Informing key demographics and above all, use best practice. Create innovation yet increase viewability. Synchronise vertical integration and possibly innovate.
+    
+    Repurposing cloud computing and then target the low hanging fruit. Build vertical integration and possibly improve overall outcomes. Considering branding to, consequently, surprise and delight. Engage responsive websites in order to make users into advocates. Repurposing responsive websites to in turn be CMSable.
+    
+    Repurposing core competencies to be on brand. Generating stakeholder management but be transparent. Inform core competencies and then be CMSable. Drive thought leadership and possibly create a better customer experience. Engaging blue-sky thinking and then create a better customer experience. Generating stakeholder engagement to be transparent.",
+    :image => "https://i.imgur.com/qmHekD3.jpg",
+    :category => Category.find(14),
+    :created_at => "2021-02-01 05:19:43",
+    
+})
+
+Post.create({
+    :title => "Testing Post 14",
+    :author => "Matt Enbar",
+    :content => "Take agile so that as an end result, we increase viewability. Execute brand integration so that as an end result, we make users into advocates. Leverage blue-sky thinking with the aim to improve overall outcomes. Demonstrate customer journeys and above all, go viral. Repurpose sprints and try to re-target key demographics.
+
+    Generate big data and try to make the logo bigger. Build custom solutions with the possibility to take this offline. Utilising growth hacking and above all, make users into advocates. Informing key demographics and above all, use best practice. Create innovation yet increase viewability. Synchronise vertical integration and possibly innovate.
+    
+    Repurposing cloud computing and then target the low hanging fruit. Build vertical integration and possibly improve overall outcomes. Considering branding to, consequently, surprise and delight. Engage responsive websites in order to make users into advocates. Repurposing responsive websites to in turn be CMSable.
+    
+    Repurposing core competencies to be on brand. Generating stakeholder management but be transparent. Inform core competencies and then be CMSable. Drive thought leadership and possibly create a better customer experience. Engaging blue-sky thinking and then create a better customer experience. Generating stakeholder engagement to be transparent.",
+    :image => "https://i.imgur.com/qmHekD3.jpg",
+    :category => Category.find(15),
+    :created_at => "2021-02-01 05:19:43",
+    
+})
+
+Post.create({
+    :title => "Testing Post 15",
+    :author => "Matt Enbar",
+    :content => "Take agile so that as an end result, we increase viewability. Execute brand integration so that as an end result, we make users into advocates. Leverage blue-sky thinking with the aim to improve overall outcomes. Demonstrate customer journeys and above all, go viral. Repurpose sprints and try to re-target key demographics.
+
+    Generate big data and try to make the logo bigger. Build custom solutions with the possibility to take this offline. Utilising growth hacking and above all, make users into advocates. Informing key demographics and above all, use best practice. Create innovation yet increase viewability. Synchronise vertical integration and possibly innovate.
+    
+    Repurposing cloud computing and then target the low hanging fruit. Build vertical integration and possibly improve overall outcomes. Considering branding to, consequently, surprise and delight. Engage responsive websites in order to make users into advocates. Repurposing responsive websites to in turn be CMSable.
+    
+    Repurposing core competencies to be on brand. Generating stakeholder management but be transparent. Inform core competencies and then be CMSable. Drive thought leadership and possibly create a better customer experience. Engaging blue-sky thinking and then create a better customer experience. Generating stakeholder engagement to be transparent.",
+    :image => "https://i.imgur.com/qmHekD3.jpg",
+    :category => Category.find(15),
+    :created_at => "2021-02-01 05:19:43",
+    
+})
+
 leftFeature = Feature.create({:name => "Left Feature", :post=> Post.find(1)}) #1
 mainFeature = Feature.create({:name => "Main Feature", :post=> Post.find(2) }) #2
 rightFeature = Feature.create({:name => "Left Feature", :post=> Post.find(3) }) #3

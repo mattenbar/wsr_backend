@@ -2,11 +2,14 @@
 # seeding posts REQUIRES the Categories to be numbered EXACTLY STARTING FROM '0'
 # IN ORDER FOR THE BELOW POSTS TO WORK....YOU MUST:
 #  ROLLBACK YOUR DATABASE TO NOTHING...
-        # rake db:rollback (((until nothing left)))
+        # rake db:migrate VERSION=0 => this will rollback everything
         # rake db:migrate
         # rake db:seed
 
 ### THIS IS THE ONLY WAY :)
+
+
+
 
 
 capital_connections = Category.create(name: "Capital Connections")
@@ -39,7 +42,9 @@ fourthPost = Post.create({
     Taking key demographics to in turn come up with a bespoke solution. Create innovation so that we increase viewability. Synchronising integrated tech stacks and try to surprise and delight. Funneling awareness but build ROI. Synchronising above the line to, consequently, use best practice.",
     :image => "https://i.imgur.com/n4td3ic.jpg",
     :category => Category.find(1),
-    :created_at => "2021-03-17 05:19:43"
+    :created_at => "2021-03-17 05:19:43",
+    
+    
 })
 
 Post.create({
@@ -54,7 +59,8 @@ Post.create({
     Demonstrate empathy maps to, consequently, use best practice. Lead blue-sky thinking to re-target key demographics. Repurposing sprints and possibly use best practice. Drive analytics with the aim to increase viewability. Growing brand ambassadors to in turn be CMSable.",
     :image => "https://i.imgur.com/demNv7e.jpg",
     :category => Category.find(5),
-    :created_at => "2021-03-01 05:19:43"
+    :created_at => "2021-03-01 05:19:43",
+   
 })
 
 Post.create({
@@ -69,7 +75,8 @@ Post.create({
     Leverage vertical integration in order to create synergy. Build thought leadership and possibly improve overall outcomes. Execute sprints with the possibility to re-target key demographics. Informing brand pillars yet maximise share of voice. Amplify custom solutions to in turn maximise share of voice.",
     :image => "https://i.imgur.com/Zhpjeqf.jpg",
     :category => Category.find(2),
-    :created_at => "2021-01-01 05:19:43"
+    :created_at => "2021-01-01 05:19:43",
+ 
 })
 
 Post.create({
@@ -84,7 +91,8 @@ Post.create({
     Consider user experience with the aim to re-target key demographics. Create customer experience to gain traction. Considering customer journeys so that as an end result, we make the logo bigger. Considering brand pillars so that we innovate. Grow outside the box thinking with the possibility to be CMSable.",
     :image => "https://i.imgur.com/IXVmPai.jpg",
     :category => Category.find(11),
-    :created_at => "2021-02-17 05:19:43"
+    :created_at => "2021-02-17 05:19:43",
+    
 })
 
 Post.create({
@@ -99,7 +107,8 @@ Post.create({
     Demonstrate empathy maps to, consequently, use best practice. Lead blue-sky thinking to re-target key demographics. Repurposing sprints and possibly use best practice. Drive analytics with the aim to increase viewability. Growing brand ambassadors to in turn be CMSable.",
     :image => "https://i.imgur.com/ayTDnl2.jpg",
     :category => Category.find(1),
-    :created_at => "2021-03-17 05:19:43"
+    :created_at => "2021-03-17 05:19:43",
+    
 })
 
 Post.create({
@@ -114,7 +123,8 @@ Post.create({
     Consider user experience with the aim to re-target key demographics. Create customer experience to gain traction. Considering customer journeys so that as an end result, we make the logo bigger. Considering brand pillars so that we innovate. Grow outside the box thinking with the possibility to be CMSable.",
     :image => "https://i.imgur.com/vY8IF6g.jpg",
     :category => Category.find(5),
-    :created_at => "2021-03-01 05:19:43"
+    :created_at => "2021-03-01 05:19:43",
+    
 })
 
 Post.create({
@@ -129,7 +139,8 @@ Post.create({
     Leverage vertical integration in order to create synergy. Build thought leadership and possibly improve overall outcomes. Execute sprints with the possibility to re-target key demographics. Informing brand pillars yet maximise share of voice. Amplify custom solutions to in turn maximise share of voice.",
     :image => "https://i.imgur.com/Il7q1Dy.jpg",
     :category => Category.find(2),
-    :created_at => "2021-02-15 05:19:43"
+    :created_at => "2021-02-15 05:19:43",
+    
 })
 
 Post.create({
@@ -144,7 +155,8 @@ Post.create({
     Repurposing core competencies to be on brand. Generating stakeholder management but be transparent. Inform core competencies and then be CMSable. Drive thought leadership and possibly create a better customer experience. Engaging blue-sky thinking and then create a better customer experience. Generating stakeholder engagement to be transparent.",
     :image => "https://i.imgur.com/ZM450r2.jpg",
     :category => Category.find(1),
-    :created_at => "2021-03-17 05:19:43"
+    :created_at => "2021-03-17 05:19:43",
+    
 })
 
 Post.create({
@@ -159,7 +171,8 @@ Post.create({
     Leverage vertical integration in order to create synergy. Build thought leadership and possibly improve overall outcomes. Execute sprints with the possibility to re-target key demographics. Informing brand pillars yet maximise share of voice. Amplify custom solutions to in turn maximise share of voice.",
     :image => "https://i.imgur.com/9R6vLU4.jpg",
     :category => Category.find(5),
-    :created_at => "2021-02-01 05:19:43"
+    :created_at => "2021-02-01 05:19:43",
+    
 })
 
 Post.create({
@@ -174,7 +187,8 @@ Post.create({
     Demonstrating above the line and then use best practice. Take below the line and try to think outside the box. Informing a holistic approach yet further your reach. Repurposing audience segments and then be CMSable. Generating social with a goal to think outside the box.",
     :image => "https://i.imgur.com/xnjS0YT.jpg",
     :category => Category.find(2),
-    :created_at => "2021-01-01 05:19:43"
+    :created_at => "2021-01-01 05:19:43",
+    
 })
 
 Post.create({
@@ -189,5 +203,10 @@ Post.create({
     Repurposing core competencies to be on brand. Generating stakeholder management but be transparent. Inform core competencies and then be CMSable. Drive thought leadership and possibly create a better customer experience. Engaging blue-sky thinking and then create a better customer experience. Generating stakeholder engagement to be transparent.",
     :image => "https://i.imgur.com/qmHekD3.jpg",
     :category => Category.find(11),
-    :created_at => "2021-02-01 05:19:43"
+    :created_at => "2021-02-01 05:19:43",
+    
 })
+
+leftFeature = Feature.create({:name => "Left Feature", :post=> Post.find(1)}) #1
+mainFeature = Feature.create({:name => "Main Feature", :post=> Post.find(2) }) #2
+rightFeature = Feature.create({:name => "Left Feature", :post=> Post.find(3) }) #3

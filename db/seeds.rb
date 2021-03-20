@@ -13,7 +13,7 @@
 
 
 capital_connections = Category.create(name: "Capital Connections")
-digital_domain = Category.create(name: "Digital Domain")
+digital_domain = Category.create(name: "The Digital Domain")
 point_counterpoint = Category.create(name: "Point-Counterpoint")
 shout_out_and_put_downs = Category.create(name: "Shout Outs & Put Downs")
 beltway_and_beyond = Category.create(name: "Beltway and Beyond")

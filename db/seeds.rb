@@ -14,7 +14,6 @@
 
 capital_connections = Category.create(name: "Capital Connections")
 digital_domain = Category.create(name: "The Digital Domain")
-point_counterpoint = Category.create(name: "Point-Counterpoint")
 shout_out_and_put_downs = Category.create(name: "Shout Outs & Put Downs")
 beltway_and_beyond = Category.create(name: "Beltway and Beyond")
 lawyer_land = Category.create(name: "Lawyer Land")
@@ -201,7 +200,7 @@ Post.create({
     Repurposing cloud computing and then target the low hanging fruit. Build vertical integration and possibly improve overall outcomes. Considering branding to, consequently, surprise and delight. Engage responsive websites in order to make users into advocates. Repurposing responsive websites to in turn be CMSable.
     
     Repurposing core competencies to be on brand. Generating stakeholder management but be transparent. Inform core competencies and then be CMSable. Drive thought leadership and possibly create a better customer experience. Engaging blue-sky thinking and then create a better customer experience. Generating stakeholder engagement to be transparent.",
-    :image => "https://i.imgur.com/qmHekD3.jpg",
+    :image => "https://i.imgur.com/Il7q1Dy.jpg",
     :category => Category.find(11),
     :created_at => "2021-02-01 05:19:43",
     
@@ -217,8 +216,8 @@ Post.create({
     Repurposing cloud computing and then target the low hanging fruit. Build vertical integration and possibly improve overall outcomes. Considering branding to, consequently, surprise and delight. Engage responsive websites in order to make users into advocates. Repurposing responsive websites to in turn be CMSable.
     
     Repurposing core competencies to be on brand. Generating stakeholder management but be transparent. Inform core competencies and then be CMSable. Drive thought leadership and possibly create a better customer experience. Engaging blue-sky thinking and then create a better customer experience. Generating stakeholder engagement to be transparent.",
-    :image => "https://i.imgur.com/qmHekD3.jpg",
-    :category => Category.find(14),
+    :image => "https://i.imgur.com/xnjS0YT.jpg",
+    :category => Category.find(13),
     :created_at => "2021-02-01 05:19:43",
     
 })
@@ -234,7 +233,7 @@ Post.create({
     
     Repurposing core competencies to be on brand. Generating stakeholder management but be transparent. Inform core competencies and then be CMSable. Drive thought leadership and possibly create a better customer experience. Engaging blue-sky thinking and then create a better customer experience. Generating stakeholder engagement to be transparent.",
     :image => "https://i.imgur.com/qmHekD3.jpg",
-    :category => Category.find(14),
+    :category => Category.find(13),
     :created_at => "2021-02-01 05:19:43",
     
 })
@@ -249,8 +248,8 @@ Post.create({
     Repurposing cloud computing and then target the low hanging fruit. Build vertical integration and possibly improve overall outcomes. Considering branding to, consequently, surprise and delight. Engage responsive websites in order to make users into advocates. Repurposing responsive websites to in turn be CMSable.
     
     Repurposing core competencies to be on brand. Generating stakeholder management but be transparent. Inform core competencies and then be CMSable. Drive thought leadership and possibly create a better customer experience. Engaging blue-sky thinking and then create a better customer experience. Generating stakeholder engagement to be transparent.",
-    :image => "https://i.imgur.com/qmHekD3.jpg",
-    :category => Category.find(15),
+    :image => "https://i.imgur.com/IXVmPai.jpg",
+    :category => Category.find(14),
     :created_at => "2021-02-01 05:19:43",
     
 })
@@ -265,8 +264,8 @@ Post.create({
     Repurposing cloud computing and then target the low hanging fruit. Build vertical integration and possibly improve overall outcomes. Considering branding to, consequently, surprise and delight. Engage responsive websites in order to make users into advocates. Repurposing responsive websites to in turn be CMSable.
     
     Repurposing core competencies to be on brand. Generating stakeholder management but be transparent. Inform core competencies and then be CMSable. Drive thought leadership and possibly create a better customer experience. Engaging blue-sky thinking and then create a better customer experience. Generating stakeholder engagement to be transparent.",
-    :image => "https://i.imgur.com/qmHekD3.jpg",
-    :category => Category.find(15),
+    :image => "https://i.imgur.com/n4td3ic.jpg",
+    :category => Category.find(14),
     :created_at => "2021-02-01 05:19:43",
     
 })

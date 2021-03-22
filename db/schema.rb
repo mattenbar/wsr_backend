@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_20_164547) do
+ActiveRecord::Schema.define(version: 2021_03_22_142646) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,19 @@ ActiveRecord::Schema.define(version: 2021_03_20_164547) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "post_id"
     t.index ["post_id"], name: "index_features_on_post_id"
+  end
+
+  create_table "pointcps", force: :cascade do |t|
+    t.string "titleOne"
+    t.string "authorOne"
+    t.text "contentOne"
+    t.string "imageOne"
+    t.string "titleTwo"
+    t.string "authorTwo"
+    t.text "contentTwo"
+    t.string "imageTwo"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "posts", force: :cascade do |t|

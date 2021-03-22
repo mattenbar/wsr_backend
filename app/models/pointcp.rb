@@ -1,0 +1,2 @@
+class Pointcp < ApplicationRecord
+end

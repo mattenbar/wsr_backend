@@ -1,4 +1,4 @@
-class PointcpSerializer < ActiveModel::Serializer
+class PointcpSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :titleOne, :authorOne, :contentOne, :imageOne, :youtubeOne, :votesOne, :titleTwo, :authorTwo, :contentTwo, :imageTwo, :youtubeTwo, :votesTwo, :created_at
+  attributes :titleOne, :authorOne, :contentOne, :imageOne, :titleTwo, :authorTwo, :contentTwo, :imageTwo, :created_at
 end

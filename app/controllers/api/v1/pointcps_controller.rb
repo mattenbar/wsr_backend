@@ -7,27 +7,30 @@ class Api::V1::PointcpsController < ApplicationController
   end
 
   def show
-    pcp = Pointcp.find(params[:id])
-    render json: {pointcp: PointcpSerializer.new(pcp)}
+    pointcp = Pointcp.find(params[:id])
+    render json: {pointcp: PointcpSerializer.new(pointcp)}
   end
 
   def image_upload
-    file_url = Cloudinary::Uploader.upload(params[:image])
-    image = file_url["url"]
-    if image
-        render json: {image: image}
+    file_url_one = Cloudinary::Uploader.upload(params[:imageOne])
+    imageOne = file_url_one["url"]
+    file_url_two = Cloudinary::Uploader.upload(params[:imageTwo])
+    imageTwo = file_url_two["url"]
+    if imageOne && imageTwo
+        render json: {imageOne: imageOne, imageTwo: imageTwo}
     else
         render json: {error: "Unable to save image at this time"}
     end
   end
 
   def create
-    pcp = Pointcp.create(pcp_params)
+    byebug
+    pointcp = Pointcp.create(pointcp_params)
     
-    if pcp.valid?
-      render json: {pcp: PointcpSerializer.new(pcp)}  
+    if pointcp.valid?
+      render json: {pointcp: PointcpSerializer.new(pointcp)}  
     else
-      render json: {error: 'Unable to create pcp article'}
+      render json: {error: 'Unable to create pointcp article'}
     end
 
   end
@@ -35,8 +38,8 @@ class Api::V1::PointcpsController < ApplicationController
   private
 
 
-  def pcp_params
-    params.require(:pcp).permit(:id, :titleOne, :contentOne, :authorOne, :imageOne, :titleTwo, :contentTwo, :authorTwo, :imageTwo)
+  def pointcp_params
+    params.require(:pointcp).permit(:id, :titleOne, :contentOne, :authorOne, :imageOne, :titleTwo, :contentTwo, :authorTwo, :imageTwo)
   end
 
 

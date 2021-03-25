@@ -26,6 +26,7 @@ Rails.application.routes.draw do
       get "/user_is_authorized", to: "auth#user_is_authorized"
 
       put "/image_upload", to: "posts#image_upload"
+      put "/image_upload_pointcp", to: "pointcps#image_upload"
       
     end
   end

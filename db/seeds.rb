@@ -9,26 +9,24 @@
 ### THIS IS THE ONLY WAY :)
 
 
-
-
-
-capital_connections = Category.create(name: "Capital Connections")
-digital_domain = Category.create(name: "The Digital Domain")
-shout_out_and_put_downs = Category.create(name: "Shout Outs & Put Downs")
-beltway_and_beyond = Category.create(name: "Beltway and Beyond")
-people_moves = Category.create(name: "People Moves")
-nightmare_on_compliance = Category.create(name: "Nightmare on Compliance St")
-buy_it_or_build_it = Category.create(name: "Buy It or Build It")
-wallet_share = Category.create(name: "Wallet Share")
-cybercrypt_tales = Category.create(name: "Cybercrypt Tales")
-on_the_rise = Category.create(name: "On The Rise")
-letters_from_larry = Category.create(name: "Letters From Larry")
-dramatis_personae = Category.create(name: "Dramatis Personae")
-newsmakers_roundup = Category.create(name: "Newsmakers Roundup")
-transactions_and_transitions = Category.create(name: "Transactions and Transitions")
-cast_and_crew = Category.create(name: "Cast & Crew")
-bizarre = Category.create(name: "Bizarre Industry Bazaar")
-investment  = Category.create(name: "Investment Solutions & Gatekeepers")
+# reminder: point/counterpoint not in list below...not typical category
+capital_connections = Category.create(name: "Capital Connections") # frontend: 0  /  backend/find: 1 
+digital_domain = Category.create(name: "The Digital Domain") # frontend: 1  /  backend/find: 2 
+shout_out_and_put_downs = Category.create(name: "Shout Outs & Put Downs") # frontend: 2  /  backend/find: 3 
+beltway_and_beyond = Category.create(name: "Beltway and Beyond") # frontend: 3  /  backend/find: 4 
+people_moves = Category.create(name: "People Moves") # frontend: 4  /  backend/find: 5 
+nightmare_on_compliance = Category.create(name: "Nightmare on Compliance St") # frontend: 5  /  backend/find: 6 
+buy_it_or_build_it = Category.create(name: "Buy It or Build It") # frontend: 6  /  backend/find: 7 
+wallet_share = Category.create(name: "Wallet Share") # frontend: 7  /  backend/find: 8 
+cybercrypt_tales = Category.create(name: "Cybercrypt Tales") # frontend: 8  /  backend/find: 9 
+on_the_rise = Category.create(name: "On The Rise") # frontend: 9  /  backend/find: 10 
+letters_from_larry = Category.create(name: "Letters From Larry") # frontend: 10  /  backend/find: 11 
+dramatis_personae = Category.create(name: "Dramatis Personae") # frontend: 11  /  backend/find: 12 
+newsmakers_roundup = Category.create(name: "Newsmakers Roundup") # frontend: 12  /  backend/find: 13 
+transactions_and_transitions = Category.create(name: "Transactions and Transitions") # frontend: 13  /  backend/find: 14 
+cast_and_crew = Category.create(name: "Cast & Crew") # frontend: 14  /  backend/find: 15 
+bizarre = Category.create(name: "Bizarre Industry Bazaar") ## frontend: 15  /  backend/find: 16
+investment  = Category.create(name: "Investment Solutions & Gatekeepers") # frontend: 16  /  backend/find: 17 
 
 
 fourthPost = Post.create({

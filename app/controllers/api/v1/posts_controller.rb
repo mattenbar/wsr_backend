@@ -30,7 +30,6 @@ class Api::V1::PostsController < ApplicationController
     else
       render json: {error: 'Unable to create post'}
     end
-
   end
 
   def update
@@ -45,7 +44,6 @@ class Api::V1::PostsController < ApplicationController
     post.destroy
     posts = Post.all
     render json: {post: PostSerializer.new(posts)}
-
   end
 
   private

@@ -33,7 +33,6 @@ class Api::V1::PostsController < ApplicationController
     else
       render json: {errors: post.errors.full_messages}
     end
-
   end
 
   def update
@@ -69,7 +68,6 @@ class Api::V1::PostsController < ApplicationController
   end
 
   private
-
 
   def post_params
     params.require(:post).permit(:id, :category_id, :title, :content, :author, :image, :feature_id, :youtube)

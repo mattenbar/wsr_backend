@@ -273,3 +273,7 @@ Post.create({
 leftFeature = Feature.create({:name => "Left Feature", :post=> Post.find(1)}) #1
 mainFeature = Feature.create({:name => "Main Feature", :post=> Post.find(2) }) #2
 rightFeature = Feature.create({:name => "Left Feature", :post=> Post.find(3) }) #3
+
+
+# I wanted to do this, but don't want a password visible:
+# admin = User.create(:first_name => "Admin", :last_name => "Certified", :company_name => "WSR", :email => wsrcloudinary@gmail.com, :password => "??????", :admin => true)

@@ -25,7 +25,6 @@ class Api::V1::PointcpsController < ApplicationController
   end
 
   def create
-    # byebug
     pointcp = Pointcp.create(pointcp_params)
     
     if pointcp.valid?

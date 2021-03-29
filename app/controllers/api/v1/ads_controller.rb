@@ -1,7 +1,8 @@
 class Api::V1::AdsController < ApplicationController
+  skip_before_action :require_login
 
   def index
-    ads = Ads.all
+    ads = Ad.all
     render json: {ad: AdSerializer.new(ads)}
   end
 
@@ -36,6 +37,6 @@ class Api::V1::AdsController < ApplicationController
 
 
   def ad_params
-    params.require(:ad).permit(:id, :title, :company, :image, )
+    params.require(:ad).permit(:id, :title, :company, :image, :link )
   end
 end

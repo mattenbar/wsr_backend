@@ -2,19 +2,18 @@ class Api::V1::FeaturesController < ApplicationController
   skip_before_action :require_login
   
   def index
-    features = Feature.all
+    features = Feature.all.sort
     render json: {feature: FeatureSerializer.new(features)}
   end
 
   def show
     feature = Feature.find(params[:id])
     post = feature.post
-    render json: {feature: FeatureSerializer.new(feature), post: PostSerializer.new(post)}
+    render json: {feature: FeatureSerializer.new(feature)}
   end
 
   def update
-    # byebug
-    feature = Feature.find(params["feature"]["id"])
+    feature = Feature.find(params["id"])
     feature.update(feature_params)
     if feature.valid?
       feature.save
@@ -29,7 +28,7 @@ class Api::V1::FeaturesController < ApplicationController
 
   private
 
-  def post_params
+  def feature_params
     params.require(:feature).permit(:id, :post_id, :name)
   end
 

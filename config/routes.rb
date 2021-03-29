@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   
   
   
+  
   root to: 'application#home'
 
   namespace :api do
@@ -15,6 +16,10 @@ Rails.application.routes.draw do
 
       resources :features do
         resources :posts
+      end
+
+      resources :showads do
+          resources :ads
       end
       
       resources :categories do

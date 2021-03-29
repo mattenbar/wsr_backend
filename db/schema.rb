@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_29_153204) do
+ActiveRecord::Schema.define(version: 2021_03_29_175236) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,14 @@ ActiveRecord::Schema.define(version: 2021_03_29_153204) do
     t.index ["category_id"], name: "index_posts_on_category_id"
   end
 
+  create_table "showads", force: :cascade do |t|
+    t.string "name"
+    t.bigint "ad_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["ad_id"], name: "index_showads_on_ad_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -78,4 +86,5 @@ ActiveRecord::Schema.define(version: 2021_03_29_153204) do
 
   add_foreign_key "features", "posts"
   add_foreign_key "posts", "categories"
+  add_foreign_key "showads", "ads"
 end

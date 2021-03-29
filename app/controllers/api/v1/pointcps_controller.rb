@@ -12,6 +12,7 @@ class Api::V1::PointcpsController < ApplicationController
   end
 
   def image_upload
+
     file_url_one = Cloudinary::Uploader.upload(params[:imageOne])
     imageOne = file_url_one["url"]
     file_url_two = Cloudinary::Uploader.upload(params[:imageTwo])
@@ -24,7 +25,7 @@ class Api::V1::PointcpsController < ApplicationController
   end
 
   def create
-    byebug
+    # byebug
     pointcp = Pointcp.create(pointcp_params)
     
     if pointcp.valid?
@@ -39,7 +40,7 @@ class Api::V1::PointcpsController < ApplicationController
 
 
   def pointcp_params
-    params.require(:pointcp).permit(:id, :titleOne, :contentOne, :authorOne, :imageOne, :titleTwo, :contentTwo, :authorTwo, :imageTwo)
+    params.require(:pointcp).permit(:id, :titleOne, :contentOne, :authorOne, :imageOne, :votesPointCPOne, :titleTwo, :contentTwo, :authorTwo, :imageTwo, :votesPointCPTwo)
   end
 
 

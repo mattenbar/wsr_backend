@@ -1,3 +1,4 @@
 class AdSerializer 
-  attributes :id, :name, , :company, :image
+  include FastJsonapi::ObjectSerializer
+  attributes :id, :title, :company, :link, :image
 end

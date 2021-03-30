@@ -48,8 +48,8 @@ ActiveRecord::Schema.define(version: 2021_03_29_045441) do
     t.string "imageTwo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "votesPointCPOne"
-    t.integer "votesPointCPTwo"
+    t.integer "votesPointCPOne", default: 0
+    t.integer "votesPointCPTwo", default: 0
   end
 
   create_table "posts", force: :cascade do |t|

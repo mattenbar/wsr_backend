@@ -26,48 +26,28 @@ class Api::V1::PostsController < ApplicationController
     post = Post.create(post_params)
     
     if post.valid?
-      render json: {
-        post: PostSerializer.new(post),
-        success: "Post Created Successfully"
-      }  
+      render json: {post: PostSerializer.new(post)}  
     else
-      render json: {errors: post.errors.full_messages}
+      render json: {error: 'Unable to create post'}
     end
   end
 
   def update
-    # byebug
-    post = Post.find(params["post"]["id"])
+    post = Post.find(params[:id])
     post.update(post_params)
-    if post.valid?
-      post.save
-      render json: {
-        post: post,
-        success: "Post Updated Successfully"
-      }
-    else
-      render json: {errors: post.errors.full_messages}
-    end
+    posts = Post.all
+    render json: {post: PostSerializer.new(posts)}
   end
 
   def destroy
     post = Post.find(params[:id])
-    if post.destroy
-      posts = Post.all
-      render json: {
-        post: PostSerializer.new(posts),
-        success: "Post Was Successfully Deleted"
-      }
-    else
-      render json: {
-        post: PostSerializer.new(posts),
-        error: "Unable To Delete Post At This Time"
-      }
-    end
-
+    post.destroy
+    posts = Post.all
+    render json: {post: PostSerializer.new(posts)}
   end
 
   private
+
 
   def post_params
     params.require(:post).permit(:id, :category_id, :title, :content, :author, :image, :feature_id, :youtube)

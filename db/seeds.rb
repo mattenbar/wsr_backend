@@ -303,3 +303,27 @@ point_cp2 = Pointcp.create({
     :authorTwo => "Jerry F. Dill",
     :imageTwo => "https://i.imgur.com/3gt9XQP.jpg"
 })
+
+Ad.create({
+    :title => "ad one",
+    :company => "zoey",
+    :image =>  "http://res.cloudinary.com/wealthsolutionsreport/image/upload/v1617116431/cybn8g70tr4a26lkq9k6.png",
+    :link => "https://www.menbarphotos.com"
+})
+
+Ad.create({
+    :title => "ad two",
+    :company => "zoey 2",
+    :image =>  "http://res.cloudinary.com/wealthsolutionsreport/image/upload/v1617116431/cybn8g70tr4a26lkq9k6.png",
+    :link => "https://www.menbarphotos.com"
+})
+
+showAdOne = Showad.create({
+    :name => "Left Ad",
+    :ad => Ad.find(1)
+})
+
+showAdTwo = Showad.create({
+    :name => "Right Ad",
+    :ad => Ad.find(2)
+})

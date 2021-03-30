@@ -61,7 +61,6 @@ ActiveRecord::Schema.define(version: 2021_03_29_175236) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "category_id", null: false
     t.string "image"
-    t.string "youtube"
     t.index ["category_id"], name: "index_posts_on_category_id"
   end
 

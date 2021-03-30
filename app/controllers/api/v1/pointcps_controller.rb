@@ -2,7 +2,7 @@ class Api::V1::PointcpsController < ApplicationController
   skip_before_action :require_login
 
   def index
-    pointcps = Pointcp.all
+    pointcps = Pointcp.all.sort_by{ |pointcp| pointcp[:id] }
     render json: {pointcp: PointcpSerializer.new(pointcps)}
   end
 
@@ -31,6 +31,26 @@ class Api::V1::PointcpsController < ApplicationController
       render json: {pointcp: PointcpSerializer.new(pointcp)}  
     else
       render json: {error: 'Unable to create pointcp article'}
+    end
+
+  end
+
+  def update
+    # byebug
+    pointcp = Pointcp.find_by(id: params["id"])
+    # byebug
+    if params["votesPointCPOne"] != nil
+      pointcp.update(votesPointCPOne: params["votesPointCPOne"])
+    end
+
+    if params["votesPointCPTwo"] != nil
+      pointcp.update(votesPointCPTwo: params["votesPointCPTwo"])
+    end
+
+    if pointcp.valid?
+      render json: {pointcp: PointcpSerializer.new(pointcp)}
+    else
+      render json: {error: 'Unable To Vote At This Time'}
     end
 
   end

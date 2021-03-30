@@ -3,7 +3,7 @@ class Api::V1::PointcpsController < ApplicationController
 
   def index
     pointcps = Pointcp.all.sort_by{ |pointcp| pointcp[:id] }
-    render json: {pointcp: PointcpSerializer.new(pointcps)}
+    render json: {pointcps: PointcpSerializer.new(pointcps)}
   end
 
   def show

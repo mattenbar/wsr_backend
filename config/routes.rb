@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
 
   
-  
-  
-  
-  
   root to: 'application#home'
 
   namespace :api do
@@ -12,7 +8,10 @@ Rails.application.routes.draw do
 
       resources :ads
 
-      resources :pointcps
+      resources :pointcps do
+        resources :pointcpvotes
+      end
+      resources :pointcpvotes
 
       resources :features do
         resources :posts

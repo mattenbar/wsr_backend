@@ -2,12 +2,11 @@ class Api::V1::PostsController < ApplicationController
   skip_before_action :require_login
 
   def index
-    posts = Post.all
-    render json: {post: PostSerializer.new(posts)}
+    posts = Post.all.sort
+    render json: {posts: PostSerializer.new(posts)}
   end
 
   def show
-    # byebug
     post = Post.find(params[:id])
     render json: {post: PostSerializer.new(post)}
   end
@@ -26,28 +25,48 @@ class Api::V1::PostsController < ApplicationController
     post = Post.create(post_params)
     
     if post.valid?
-      render json: {post: PostSerializer.new(post)}  
+      render json: {
+        post: PostSerializer.new(post),
+        success: "Post Created Successfully"
+      }  
     else
-      render json: {error: 'Unable to create post'}
+      render json: {errors: post.errors.full_messages}
     end
   end
 
   def update
-    post = Post.find(params[:id])
+    # byebug
+    post = Post.find(params["post"]["id"])
     post.update(post_params)
-    posts = Post.all
-    render json: {post: PostSerializer.new(posts)}
+    if post.valid?
+      post.save
+      render json: {
+        post: post,
+        success: "Post Updated Successfully"
+      }
+    else
+      render json: {errors: post.errors.full_messages}
+    end
   end
 
   def destroy
     post = Post.find(params[:id])
-    post.destroy
-    posts = Post.all
-    render json: {post: PostSerializer.new(posts)}
+    if post.destroy
+      posts = Post.all
+      render json: {
+        post: PostSerializer.new(posts),
+        success: "Post Was Successfully Deleted"
+      }
+    else
+      render json: {
+        post: PostSerializer.new(posts),
+        error: "Unable To Delete Post At This Time"
+      }
+    end
+
   end
 
   private
-
 
   def post_params
     params.require(:post).permit(:id, :category_id, :title, :content, :author, :image, :feature_id, :youtube)

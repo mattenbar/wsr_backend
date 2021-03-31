@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_30_223731) do
+ActiveRecord::Schema.define(version: 2021_03_31_170439) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,17 @@ ActiveRecord::Schema.define(version: 2021_03_30_223731) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "categoryvotes", force: :cascade do |t|
+    t.integer "like", default: 0
+    t.integer "dislike", default: 0
+    t.bigint "user_id"
+    t.bigint "post_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_categoryvotes_on_post_id"
+    t.index ["user_id"], name: "index_categoryvotes_on_user_id"
   end
 
   create_table "features", force: :cascade do |t|
@@ -73,6 +84,17 @@ ActiveRecord::Schema.define(version: 2021_03_30_223731) do
     t.bigint "category_id", null: false
     t.string "image"
     t.index ["category_id"], name: "index_posts_on_category_id"
+  end
+
+  create_table "postvotes", force: :cascade do |t|
+    t.integer "like", default: 0
+    t.integer "dislike", default: 0
+    t.bigint "user_id"
+    t.bigint "post_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_postvotes_on_post_id"
+    t.index ["user_id"], name: "index_postvotes_on_user_id"
   end
 
   create_table "showads", force: :cascade do |t|

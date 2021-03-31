@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   
+  
   root to: 'application#home'
 
   namespace :api do
@@ -25,7 +26,11 @@ Rails.application.routes.draw do
         resources :posts
       end
       
-      resources :posts
+      resources :posts do 
+        resources :postvotes
+      end
+      
+      resources :postvotes
 
       resource :users, only: [:index, :create]
       post "/login", to: "auth#login"

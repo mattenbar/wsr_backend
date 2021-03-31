@@ -30,17 +30,6 @@ ActiveRecord::Schema.define(version: 2021_03_31_170439) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "categoryvotes", force: :cascade do |t|
-    t.integer "like", default: 0
-    t.integer "dislike", default: 0
-    t.bigint "user_id"
-    t.bigint "post_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["post_id"], name: "index_categoryvotes_on_post_id"
-    t.index ["user_id"], name: "index_categoryvotes_on_user_id"
-  end
-
   create_table "features", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false

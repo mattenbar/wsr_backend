@@ -276,7 +276,7 @@ rightFeature = Feature.create({:name => "Left Feature", :post=> Post.find(3) }) 
 
 
 # I wanted to do this, but don't want a password visible:
-# admin = User.create(:first_name => "Admin", :last_name => "Certified", :company_name => "WSR", :email => wsrcloudinary@gmail.com, :password => "??????", :admin => true)
+# admin = User.create(:first_name => "Admin", :last_name => "Certified", :company_name => "WSR", :email => "wsrcloudinary@gmail.com", :password => "admin", :admin => true)
 
 
 # pcp1=Pointcp.create(:titleOne => "This is A PCP Article", :contentOne => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dignissim a nulla cursus luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ornare purus in metus euismod, id pretium enim tincidunt. Duis suscipit ipsum pellentesque elit pretium faucibus. Cras a enim pretium, vehicula diam eget, posuere massa. Donec vulputate tincidunt purus, non bibendum enim mattis id. Donec ultrices leo vel erat volutpat ultrices. Nunc vel erat consequat, porta ligula in, dictum orci.", :authorOne => "John T. Doe", :imageOne => "https://i.imgur.com/s2XnoPv.jpg", :titleTwo => "Article 2 Title", :contentTwo => "Nullam ut ornare sem. Etiam est nulla, pellentesque sed sapien et, lobortis euismod augue. Donec augue nunc, viverra id tristique sed, ullamcorper a sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse vitae nulla arcu. Vivamus mattis ipsum venenatis placerat consequat. Proin eu erat est. In ut nunc vel magna lacinia elementum. Nulla ut bibendum augue. Vivamus volutpat tristique ultrices. Nunc egestas interdum nisi sed consectetur.", :authorTwo => "Jerry F. Dill", :imageTwo => "https://i.imgur.com/hUlHGr6.jpg")

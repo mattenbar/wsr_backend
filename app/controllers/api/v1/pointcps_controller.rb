@@ -8,7 +8,22 @@ class Api::V1::PointcpsController < ApplicationController
 
   def show
     pointcp = Pointcp.find(params[:id])
-    render json: {pointcp: PointcpSerializer.new(pointcp)}
+    # byebug
+    articleOneVotes = pointcp.pointcpvotes.where(articleOneVote: 1).count
+    articleTwoVotes = pointcp.pointcpvotes.where(articleTwoVote: 1).count
+    if articleOneVotes > articleTwoVotes
+      winner = pointcp.authorOne 
+    elsif articleTwoVotes > articleOneVotes
+      winner = pointcp.authorTwo
+    else 
+      winner = "It's A Tie!"
+    end
+    render json: {
+      pointcp: PointcpSerializer.new(pointcp),
+      articleOneVotes: articleOneVotes,
+      articleTwoVotes: articleTwoVotes,
+      winner: winner
+    }
   end
 
   def image_upload
@@ -25,6 +40,7 @@ class Api::V1::PointcpsController < ApplicationController
   end
 
   def create
+    byebug
     pointcp = Pointcp.create(pointcp_params)
     
     if pointcp.valid?
@@ -59,7 +75,7 @@ class Api::V1::PointcpsController < ApplicationController
 
 
   def pointcp_params
-    params.require(:pointcp).permit(:id, :titleOne, :contentOne, :authorOne, :imageOne, :votesPointCPOne, :titleTwo, :contentTwo, :authorTwo, :imageTwo, :votesPointCPTwo)
+    params.require(:pointcp).permit(:id, :titleOne, :contentOne, :authorOne, :imageOne, :titleTwo, :contentTwo, :authorTwo, :imageTwo, :topic, :end_date)
   end
 
 

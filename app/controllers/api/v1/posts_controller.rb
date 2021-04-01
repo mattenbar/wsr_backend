@@ -52,16 +52,15 @@ class Api::V1::PostsController < ApplicationController
     if post.destroy
       posts = Post.all
       render json: {
-        post: PostSerializer.new(posts),
+        posts: PostSerializer.new(posts),
         success: "Post Was Successfully Deleted"
       }
     else
       render json: {
-        post: PostSerializer.new(posts),
+        posts: PostSerializer.new(posts),
         error: "Unable To Delete Post At This Time"
       }
     end
-
   end
 
   private

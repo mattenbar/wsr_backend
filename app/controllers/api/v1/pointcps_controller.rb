@@ -27,13 +27,39 @@ class Api::V1::PointcpsController < ApplicationController
   end
 
   def image_upload
+    # byebug
+    # foo.kind_of?(String)
+    if params[:imageOne] != nil && params[:imageTwo] != nil
+      file_url_one = Cloudinary::Uploader.upload(params[:imageOne])
+      imageOne = file_url_one["url"]
+      file_url_two = Cloudinary::Uploader.upload(params[:imageTwo])
+      imageTwo = file_url_two["url"]
+      # byebug
+      if imageOne && imageTwo
+          render json: {imageOne: imageOne, imageTwo: imageTwo}
+      else
+          render json: {error: "Unable to save image at this time"}
+      end
 
-    file_url_one = Cloudinary::Uploader.upload(params[:imageOne])
-    imageOne = file_url_one["url"]
-    file_url_two = Cloudinary::Uploader.upload(params[:imageTwo])
-    imageTwo = file_url_two["url"]
-    if imageOne && imageTwo
-        render json: {imageOne: imageOne, imageTwo: imageTwo}
+    elsif params[:imageOne] != nil  && params[:imageTwo] == nil
+      file_url_one = Cloudinary::Uploader.upload(params[:imageOne])
+      imageOne = file_url_one["url"]
+      if imageOne
+          render json: {imageOne: imageOne}
+      else
+          render json: {error: "Unable to save image at this time"}
+      end
+
+
+    elsif params[:imageOne] == nil  && params[:imageTwo] != nil
+      file_url_two = Cloudinary::Uploader.upload(params[:imageTwo])
+      imageTwo = file_url_two["url"]
+      if imageTwo
+          render json: {imageTwo: imageTwo}
+      else
+          render json: {error: "Unable to save image at this time"}
+      end
+
     else
         render json: {error: "Unable to save image at this time"}
     end
@@ -62,10 +88,15 @@ class Api::V1::PointcpsController < ApplicationController
       pointcp.update(votesPointCPTwo: params["votesPointCPTwo"])
     end
 
+    pointcp.update(pointcp_params)
+
     if pointcp.valid?
-      render json: {pointcp: PointcpSerializer.new(pointcp)}
+      render json: {
+        pointcp: PointcpSerializer.new(pointcp),
+        success: "PointCP Updated Successfully"
+      }
     else
-      render json: {error: 'Unable To Vote At This Time'}
+      render json: {error: 'Unable To Update PointCP At This Time'}
     end
 
   end

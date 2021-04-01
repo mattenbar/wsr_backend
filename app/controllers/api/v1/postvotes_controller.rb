@@ -12,46 +12,37 @@ class Api::V1::PostvotesController < ApplicationController
     def create
         
         p = Postvote.all.where(post_id: params["post_id"]).where(user_id: params["user_id"])  # && post_id: params["post_id"]
-        # byebug
+        
         if p.empty? 
+            
             vote = Postvote.new
-
+            
             vote.user_id = params["user_id"]
             vote.post_id = params["post_id"]
+            vote.like = params["like"]
+            vote.dislike = params["dislike"]
 
-            if params["like"] == 1
-                vote.like = params["like"]
-
-                if vote.save 
-                    render json: {
-                        success: "You have liked this article!"
-                    }
-                else
-                    render json: {
-                        failure: "Unable To Vote At This Time."
-                    }
-                end
-        
+            if vote.save 
+                render json: {
+                    success: "You have liked or disliked this article!"
+                }
+            else
+                render json: {
+                    failure: "Unable To Vote At This Time."
+                }
             end
-
-            if params["dislike"] == 1
-                vote.dislike = params["dislike"]
-
-                if vote.save 
-                    render json: {
-                        success: "You have disliked this article"
-                    }
-                else
-                    render json: {
-                        failure: "Unable To Vote At This Time."
-                    }
-                end
         
-            end
+           
         else
-            render json: {
-                failure: "You have already voted."
-            }
+            p = p.first
+            p.like = params["like"]
+            p.dislike = params["dislike"]
+            
+            if p.save
+                render json: {
+                    success: "You have changed your vote."
+                }
+            end
         end
     end
 

@@ -14,6 +14,7 @@ require "action_view/railtie"
 require "action_cable/engine"
 # require "sprockets/railtie"
 require "rails/test_unit/railtie"
+require 'hubspot-api-client'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -36,5 +37,10 @@ module WrsBackend
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    config.hubspot = config_for(:hubspot)
+    Hubspot.configure do |hubspot_config|
+      hubspot_config.api_key['hapikey'] = config.hubspot.api_key
+    end
   end
 end

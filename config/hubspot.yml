@@ -1,7 +1,7 @@
 ---
 development:
-  api_key: '' # TODO Add Hubspot API keys
+  api_key: '81f72fa7-7782-4d96-83bc-6279077c14fe'
 production:
-  api_key: '' # TODO Add Hubspot API keys
+  api_key: '81f72fa7-7782-4d96-83bc-6279077c14fe'
 test:
-  api_key: '' # TODO Add Hubspot API keys
+  api_key: '81f72fa7-7782-4d96-83bc-6279077c14fe'

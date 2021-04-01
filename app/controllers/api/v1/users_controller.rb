@@ -10,10 +10,19 @@ class Api::V1::UsersController < ApplicationController
 
     def create
         user = User.create(user_params)
+
         # byebug
         if user.valid?
+            Services::Hubspot::CreateContact.new(
+                first_name: user.first_name,
+                last_name: user.last_name,
+                company_name: user.company_name,
+                email: user.email,
+            ).call
+
             payload = {user_id: user.id}
             token = encode_token(payload)
+
             render json: {
                 status: :created,
                 user: user,

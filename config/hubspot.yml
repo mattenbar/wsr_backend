@@ -1,0 +1,7 @@
+---
+development:
+  api_key: '' # TODO Add Hubspot API keys
+production:
+  api_key: '' # TODO Add Hubspot API keys
+test:
+  api_key: '' # TODO Add Hubspot API keys

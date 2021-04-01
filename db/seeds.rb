@@ -296,7 +296,9 @@ point_cp1 = Pointcp.create({
     :titleTwo => "Article 2 Title",
     :contentTwo => "Nullam ut ornare sem. Etiam est nulla, pellentesque sed sapien et, lobortis euismod augue. Donec augue nunc, viverra id tristique sed, ullamcorper a sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse vitae nulla arcu. Vivamus mattis ipsum venenatis placerat consequat. Proin eu erat est. In ut nunc vel magna lacinia elementum. Nulla ut bibendum augue. Vivamus volutpat tristique ultrices. Nunc egestas interdum nisi sed consectetur.",
     :authorTwo => "Jerry F. Dill", 
-    :imageTwo => "https://i.imgur.com/hUlHGr6.jpg"
+    :imageTwo => "https://i.imgur.com/hUlHGr6.jpg",
+    :topic => "Who's Money?",
+    :end_date => "2021-04-15"
 })
 
 point_cp2 = Pointcp.create({
@@ -307,7 +309,9 @@ point_cp2 = Pointcp.create({
     :titleTwo => "Testing Article 4",
     :contentTwo => "Etiam est nulla, pellentesque sed sapien et, lobortis euismod augue. Donec augue nunc, viverra id tristique sed, ullamcorper a sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse vitae nulla arcu. Vivamus mattis ipsum venenatis placerat consequat. Proin eu erat est. In ut nunc vel magna lacinia elementum. Nulla ut bibendum augue. Vivamus volutpat tristique ultrices. Nunc egestas interdum nisi sed consectetur.",
     :authorTwo => "Jerry F. Dill",
-    :imageTwo => "https://i.imgur.com/3gt9XQP.jpg"
+    :imageTwo => "https://i.imgur.com/3gt9XQP.jpg",
+    :topic => "Brass Taxation",
+    :end_date => "2021-01-21"
 })
 
 Ad.create({

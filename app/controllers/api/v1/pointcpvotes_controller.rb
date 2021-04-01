@@ -21,42 +21,31 @@ class Api::V1::PointcpvotesController < ApplicationController
 
             vote.user_id = params["user_id"]
             vote.pointcp_id = params["pointcp_id"]
+            vote.articleOneVote = params["articleOneVote"]
+            vote.articleTwoVote = params["articleTwoVote"]
 
-            if params["articleOneVote"] == 1
-                vote.articleOneVote = params["articleOneVote"]
-
-                if vote.save 
+            if vote.save 
                     # byebug
                     # Pointcpvote.all.where(pointcp_id: params["pointcp_id"].to_i).count
-                    render json: {
-                        success: "Thank you for voting!"
-                    }
-                else
-                    render json: {
-                        failure: "Unable To Vote At This Time."
-                    }
-                end
-        
+                render json: {
+                    success: "Thank you for voting!"
+                }
+            else
+                render json: {
+                    failure: "Unable To Vote At This Time."
+                }
             end
 
-            if params["articleTwoVote"] == 1
-                vote.articleTwoVote = params["articleTwoVote"]
-
-                if vote.save 
-                    render json: {
-                        success: "Thank you for voting!"
-                    }
-                else
-                    render json: {
-                        failure: "Unable To Vote At This Time."
-                    }
-                end
-        
-            end
         else
-            render json: {
-                failure: "You have already voted."
-            }
+            p = p.first
+            p.articleOneVote = params["articleOneVote"]
+            p.articleTwoVote = params["articleTwoVote"]
+
+            if p.save
+                render json: {
+                    success: "You have changed your vote."
+                }
+            end
         end
     end
 

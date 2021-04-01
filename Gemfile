@@ -46,3 +46,4 @@ gem 'fast_jsonapi'
 
 gem 'jwt'
 gem 'cloudinary'
+gem "hubspot-api-client", "~> 9.6"

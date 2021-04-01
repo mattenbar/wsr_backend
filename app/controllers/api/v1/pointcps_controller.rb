@@ -101,6 +101,23 @@ class Api::V1::PointcpsController < ApplicationController
 
   end
 
+  def destroy
+    pointcp = Pointcp.find_by(id: params["id"])
+
+    if pointcp.destroy
+      pointcps = Post.all
+      render json: {
+        pointcps: PostSerializer.new(pointcps),
+        success: "Post Was Successfully Deleted"
+      }
+    else
+      render json: {
+        pointcps: PostSerializer.new(pointcps),
+        error: "Unable To Delete Post At This Time"
+      }
+    end
+  end
+
   private
 
 

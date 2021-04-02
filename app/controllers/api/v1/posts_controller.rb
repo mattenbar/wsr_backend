@@ -10,6 +10,7 @@ class Api::V1::PostsController < ApplicationController
     post = Post.find(params[:id])
     render json: {post: PostSerializer.new(post)}
   end
+  
   def image_upload
     file_url = Cloudinary::Uploader.upload(params[:image])
     image = file_url["url"]
@@ -19,6 +20,7 @@ class Api::V1::PostsController < ApplicationController
         render json: {error: "Unable to save image at this time"}
     end
   end
+
   def create
     post = Post.create(post_params)
 

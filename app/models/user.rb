@@ -1,6 +1,7 @@
 class User < ApplicationRecord
     has_secure_password
-    has_many :votes
+    has_many :pointcpvotes
+    has_many :postvotes
     
     validates :first_name, :last_name, presence: true
     
@@ -8,3 +9,4 @@ class User < ApplicationRecord
     validates :password_digest, presence: true
 
 end
+

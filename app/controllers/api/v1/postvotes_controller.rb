@@ -10,7 +10,7 @@ class Api::V1::PostvotesController < ApplicationController
     end
 
     def create
-        
+
         p = Postvote.all.where(post_id: params["post_id"]).where(user_id: params["user_id"])  # && post_id: params["post_id"]
         
         if p.empty? 

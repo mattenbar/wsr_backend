@@ -14,7 +14,7 @@ class Api::V1::AuthController < ApplicationController
     end
 
     def login
-        user = User.find_by(email: params["email"]).try(:authenticate, params["password"])
+        user = User.find_by(email: params["email"].downcase).try(:authenticate, params["password"])
         if user && user.authenticate(params[:password])
             payload = {user_id: user.id}
             token = encode_token(payload)

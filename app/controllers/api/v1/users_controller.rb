@@ -10,9 +10,13 @@ class Api::V1::UsersController < ApplicationController
 
     def create
         user = User.create(user_params)
+        
 
         # byebug
         if user.valid?
+            user.email = user.email.downcase
+            user.save
+
             Services::Hubspot::CreateContact.new(
                 first_name: user.first_name,
                 last_name: user.last_name,

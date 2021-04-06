@@ -1,4 +1,4 @@
-class Api::V1::ShowadsController < ApplicationController
+class ShowadsController < ApplicationController
   skip_before_action :require_login
 
   def index

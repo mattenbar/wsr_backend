@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   
   root to: 'application#home'
 
- 
+  
 
       resources :ads
 
@@ -40,6 +40,6 @@ Rails.application.routes.draw do
       put "/image_upload_pointcp", to: "pointcps#image_upload"
       put "/image_upload_ads", to: "ads#image_upload"
       
-    end
-  end
+    
 
+end

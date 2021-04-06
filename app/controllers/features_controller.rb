@@ -1,4 +1,4 @@
-class Api::V1::FeaturesController < ApplicationController
+class FeaturesController < ApplicationController
   skip_before_action :require_login
   
   def index

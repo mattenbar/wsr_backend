@@ -1,4 +1,4 @@
-class Api::V1::PostvotesController < ApplicationController
+class PostvotesController < ApplicationController
     skip_before_action :require_login
 
     def index

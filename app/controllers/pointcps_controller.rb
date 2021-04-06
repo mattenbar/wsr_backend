@@ -1,4 +1,4 @@
-class Api::V1::PointcpsController < ApplicationController
+class PointcpsController < ApplicationController
   skip_before_action :require_login
 
   def index

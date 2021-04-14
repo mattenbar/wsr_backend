@@ -28,6 +28,9 @@ cast_and_crew = Category.create(name: "Cast & Crew") # frontend: 14  /  backend/
 bizarre = Category.create(name: "Bizarre Industry Bazaar") ## frontend: 15  /  backend/find: 16
 investment  = Category.create(name: "Investment Solutions & Gatekeepers") # frontend: 16  /  backend/find: 17 
 words = Category.create(name: "Words In Edgewise") # frontend: 17  /  backend/find: 18 
+noteworthy_notes = Category.create(name: "Noteworthy Notes") # frontend: 18  /  backend/find: 19
+health_and_wealth = Category.create(name: "Health & Wealth") # frontend: 19  /  backend/find: 20
+upmarket = Category.create(name: "Upmarket") # frontend: 20  /  backend/find: 21
 
 
 fourthPost = Post.create({

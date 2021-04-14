@@ -12,6 +12,7 @@ class AdsController < ApplicationController
   end
 
   def image_upload
+    byebug
     file_url = Cloudinary::Uploader.upload(params[:image])
     image = file_url["url"]
     if image

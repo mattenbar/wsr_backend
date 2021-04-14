@@ -24,7 +24,7 @@ class PostvotesController < ApplicationController
 
             if vote.save 
                 render json: {
-                    success: "You have liked or disliked this article!"
+                    success: "Thank you for your vote!"
                 }
             else
                 render json: {

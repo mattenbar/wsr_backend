@@ -5,15 +5,18 @@ class PostsController < ApplicationController
     posts = Post.all.sort
     render json: {post: PostSerializer.new(posts)}
   end
+  
   def show
-    # byebug
+    
     post = Post.find(params[:id])
     render json: {post: PostSerializer.new(post)}
   end
   
   def image_upload
+    
     file_url = Cloudinary::Uploader.upload(params[:image])
     image = file_url["url"]
+
     if image
         render json: {image: image}
     else
@@ -35,9 +38,10 @@ class PostsController < ApplicationController
   end
 
   def update
-    # byebug
     post = Post.find(params["post"]["id"])
     post.update(post_params)
+
+
     if post.valid?
       post.save
       render json: {

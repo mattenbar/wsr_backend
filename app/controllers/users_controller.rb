@@ -2,7 +2,7 @@ class UsersController < ApplicationController
     skip_before_action :require_login
 
     def index
-        users = User.all
+        users = User.all.sort
         render json: {
             users: users
         }
@@ -12,12 +12,10 @@ class UsersController < ApplicationController
         user = User.find(params[:id])
         render json:{ user: user}
     end
-    
+
     def create
         user = User.create(user_params)
         
-
-        # byebug
         if user.valid?
             user.email = user.email.downcase
             user.save

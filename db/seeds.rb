@@ -279,7 +279,7 @@ rightFeature = Feature.create({:name => "Left Feature", :post=> Post.find(3) }) 
 # I wanted to do this, but don't want a password visible:
 
 admin = User.create(:first_name => "Admin", :last_name => "Certified", :company_name => "WSR", :email => "info@wealthsolutionsreport.com", :password => "Pob09926", :admin => true)
-matt = User.create(:first_name => "Matthew", :last_name => "Enbar", :company_name => "WSR", :email => "matthew.enbar@gmail.com", :password => "Matthew1", :admin => false)
+matt = User.create(:first_name => "Matthew", :last_name => "Enbar", :company_name => "WSR", :email => "matthew.enbar@gmail.com", :password => "Matthew1", :admin => true)
 
 # admin = User.create(:first_name => "Admin", :last_name => "Certified", :company_name => "WSR", :email => "wsrcloudinary@gmail.com", :password => "admin", :admin => true)
 

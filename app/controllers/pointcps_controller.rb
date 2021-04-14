@@ -8,7 +8,7 @@ class PointcpsController < ApplicationController
 
   def show
     pointcp = Pointcp.find(params[:id])
-    # byebug
+    
     articleOneVotes = pointcp.pointcpvotes.where(articleOneVote: 1).count
     articleTwoVotes = pointcp.pointcpvotes.where(articleTwoVote: 1).count
     if articleOneVotes > articleTwoVotes
@@ -27,7 +27,7 @@ class PointcpsController < ApplicationController
   end
 
   def image_upload
-    # byebug
+    
     # foo.kind_of?(String)
     if params[:imageOne] != nil && params[:imageTwo] != nil
       file_url_one = Cloudinary::Uploader.upload(params[:imageOne])

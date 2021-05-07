@@ -30,6 +30,8 @@ Rails.application.routes.draw do
       resources :postvotes
 
       resources :users, only: [:index, :create]
+
+      resources :statshots
       
       post "/login", to: "auth#login"
       get "/auto_login", to: "auth#auto_login"
@@ -38,7 +40,9 @@ Rails.application.routes.draw do
       put "/image_upload", to: "posts#image_upload"
       put "/image_upload_pointcp", to: "pointcps#image_upload"
       put "/image_upload_ads", to: "ads#image_upload"
-      
+      put "/image_upload_statshots", to: "statshots#image_upload"
+
+      get "/statshots_latest", to: "statshots#latest"
     
 
 end
